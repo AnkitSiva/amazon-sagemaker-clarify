@@ -25,15 +25,16 @@ A bias metric is a numerical value indicating the level of bias detected as dete
 A collection of bias metrics for a given dataset or a combination of a dataset and model.
 
 ## Development
+To set up your local development environment, run the following:
+
 ```
-virtualenv -p(which python3) venv
-source venv/bin/activate.fish
-pip install -e .[test]
-pytest --pspec
-pre-commit install && pre-commit run --all-files
+mkvirtualenv -p python3.7 YourVirtualEnvName
+./devtool install_deps_dev
 ```
 
-Always run `pre-commit run --all-files` before commit.
+To run all tests:
+```
+./devtool all
+```
 
-
-For running unit tests, do `./test.sh` or `pytest --pspec`. If you are using PyCharm, and cannot see the green run button next to the tests, open `Preferences` -> `Tools` -> `Python Integrated tools`, and set default test runner to `pytest`.
+Be sure to run tests and pre-commit hooks before submitting a PR.
